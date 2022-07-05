@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   fetchGreeting,
   selectGreeting,
 } from './greetingSlice';
 
-export function Greeting() {
+function Greeting() {
   const greeting = useSelector(selectGreeting);
   const dispatch = useDispatch();
 
@@ -17,3 +17,5 @@ export function Greeting() {
     <p>{greeting}</p>
   );
 }
+
+export default Greeting;

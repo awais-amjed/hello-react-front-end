@@ -8,9 +8,7 @@ const initialState = {
 
 export const fetchGreeting = createAsyncThunk(
   'greeting/fetchGreeting',
-  async () => {
-    return await RandomGreetingApi.fetchGreeting();
-  }
+  async () => RandomGreetingApi.fetchGreeting(),
 );
 
 export const greetingSlice = createSlice({
@@ -19,9 +17,11 @@ export const greetingSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchGreeting.pending, (state) => {
+        // eslint-disable-next-line no-param-reassign
         state.value = 'Loading Greeting';
       })
       .addCase(fetchGreeting.fulfilled, (state, action) => {
+        // eslint-disable-next-line no-param-reassign
         state.value = action.payload;
       });
   },

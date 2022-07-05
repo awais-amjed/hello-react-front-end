@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Greeting} from "./features/greeting/Greeting";
+import Greeting from './features/greeting/Greeting';
 
 function App() {
   return (

@@ -6,7 +6,7 @@ class RandomGreetingApi {
   }).then(async (response) => {
     if (response.status === 200) {
       const data = await response.json();
-      return data['message'];
+      return data.message;
     }
     return null;
   });
